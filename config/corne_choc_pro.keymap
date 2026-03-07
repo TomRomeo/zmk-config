@@ -66,6 +66,22 @@
         };
     };
 
+    macros {
+        goland_next_finding: goland_next_finding {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(F2)>;
+            label = "GOLAND_NEXT_FINDING";
+        };
+
+        goland_previous_finding: goland_previous_finding {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LA(F2))>;
+            label = "GOLAND_PREVIOUS_FINDING";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -98,10 +114,10 @@
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &kp LCTRL  &kp RCTRL  &kp N6    &kp N7    &kp N8     &kp N9     &kp N0  &kp BSPC
-&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LALT   &kp RALT   &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans  &trans
-&kp LSHFT  &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                        &trans    &trans    &trans     &trans     &trans  &trans
-                                          &kp LGUI      &trans        &kp SPACE                             &kp LGUI  &trans    &kp SPACE
+&kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &kp LCTRL  &goland_previous_finding  &kp N6    &kp N7    &kp N8     &kp N9     &kp N0  &kp BSPC
+&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LALT   &goland_next_finding      &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans  &trans
+&kp LSHFT  &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                                       &trans    &trans    &trans     &trans     &trans  &trans
+                                          &kp LGUI      &trans        &kp SPACE                                            &kp LGUI  &trans    &kp SPACE
             >;
         };
 
