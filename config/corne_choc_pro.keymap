@@ -70,14 +70,14 @@
         goland_next_finding: goland_next_finding {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(F2)>;
+            bindings = <&kp LA(F8)>;
             label = "GOLAND_NEXT_FINDING";
         };
 
         goland_previous_finding: goland_previous_finding {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LA(F2))>;
+            bindings = <&kp LS(LA(F8))>;
             label = "GOLAND_PREVIOUS_FINDING";
         };
     };
